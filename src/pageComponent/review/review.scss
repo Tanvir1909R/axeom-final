@@ -1,0 +1,130 @@
+@use "../../index.scss" as *;
+
+// .review_bg {
+//   background-color: #f4fcfe;
+// }
+
+.review_wrapper {
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+  .video_sec {
+    h1 {
+      color: $font-color-primary;
+      font-size: $heading;
+    }
+    p {
+      color: $font-color-secondary;
+      font-size: $para;
+      margin: 30px 0;
+    }
+    .video_bg {
+      .play_button {
+        display: flex;
+        align-items: center;
+        .button_wrap {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          margin-right: 40px;
+          background: $linear_bg;
+          position: relative;
+          z-index: 3;
+          .ping {
+            position: absolute;
+            top: -9px;
+            left: -9px;
+            width: 90px;
+            height: 90px;
+            background: $linear_bg;
+            border-radius: 50%;
+            animation: ping 1.5s ease-in-out infinite both;
+            z-index: -1;
+          }
+          svg {
+            font-size: 1.8rem;
+            fill: white;
+          }
+        }
+        p {
+          margin: 0;
+          font-weight: bold;
+          color: #39c588;
+        }
+      }
+    }
+  }
+  .reviews{
+    .review{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        .review_desc{
+            padding: 2rem 3rem;
+            background-color: transparent;
+            width: 85%;
+            border-radius: 5px;
+            box-shadow: 2px 2px 9px 0px rgba(163, 160, 160, 0.2392156863);
+            h4{
+                font-size: 1.1rem;
+                color: $font-color-primary;
+            }
+            P{
+                font-size: $para;
+                margin: 15px 0;
+                color: $font-color-secondary;
+            }
+        }
+        .review_user{
+            width: 60px;
+            height: 60px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+  }
+}
+
+@-webkit-keyframes ping {
+  0% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 0.8;
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(2.2);
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+@keyframes ping {
+  0% {
+    -webkit-transform: scale(0.2);
+    transform: scale(0.2);
+    opacity: 0.8;
+  }
+  80% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(2.2);
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
